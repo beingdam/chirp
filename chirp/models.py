@@ -1,9 +1,6 @@
 from datetime import datetime
-from flask import session
-from flask_session import Session
-from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy import Integer, String, DateTime, Text, ForeignKey, func
-from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column, relationship
+from sqlalchemy import Integer, String, DateTime, Text, ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from chirp import db
 
 class User(db.Model):
@@ -26,6 +23,11 @@ class Post(db.Model):
 
     def __repr__(self):
         return f"Post('{self.title}', '{self.date_posted}')"
-    
+
+
+# from flask import session
+# from flask_session import Session
+# from flask_sqlalchemy import SQLAlchemy
+
 # with app.app_context():
 #     db.create_all()
